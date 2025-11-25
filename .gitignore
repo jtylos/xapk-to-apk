@@ -8,3 +8,4 @@
 .env/
 .xapktoapk/
 /xapktoapk.sign.properties
+frida-server

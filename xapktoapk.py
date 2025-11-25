@@ -454,20 +454,30 @@ def load_sign_properties():
         property_value = line_parts[1].strip()
         properties[property_key] = property_value
 
+    print("sign_properties: %s" % properties)
+    
+
     if not 'sign.enabled' in properties.keys() or properties['sign.enabled'].lower() != 'true':
+        print("signing is disabled, skipping signing process")
         return None
+        
     if 'sign.keystore.file' not in properties.keys() or 'sign.keystore.password' not in properties.keys() or 'sign.key.alias' not in properties.keys() or 'sign.key.password' not in properties.keys():
+        print("no keystore file or password provided, skipping signing process")
         return None
     keystore_file = os.path.expanduser(properties['sign.keystore.file'])
     if keystore_file == '' or not os.path.exists(keystore_file) or os.path.isdir(keystore_file):
-        return None
+        print("keystore file not found or invalid")
+        properties['sign.keystore.file'] = "C:\\Users\\Mrdod\\.android\\studio\\debug.keystore"
     if properties['sign.keystore.password'] == '' or properties['sign.key.alias'] == '' or properties['sign.key.password'] == '':
+        print("passwords not provided, skipping signing process")
         return None
 
     return properties
 
 
 def build_single_apk(path_to_tmp_dir, path_to_main_apk_dir, should_sign_apk, sign_config):
+    print('should_sign_apk: %s' % should_sign_apk)
+    print('sign_config: %s' % sign_config)
     pack_apk(path_to_tmp_dir, path_to_main_apk_dir)
     zipalign_apk(path_to_tmp_dir)
     if should_sign_apk:
@@ -532,6 +542,7 @@ def main():
         exit(-2)
 
     sign_properties = load_sign_properties()
+    print("sign_properties: %s" % sign_properties)
     should_sign_apk = sign_properties is not None
     if should_sign_apk:
         tested_binary = "apksigner"

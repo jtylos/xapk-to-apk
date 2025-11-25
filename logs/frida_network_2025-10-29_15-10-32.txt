@@ -1,0 +1,458 @@
+     ____
+    / _  |   Frida 17.1.3 - A world-class dynamic instrumentation toolkit
+   | (_| |
+    > _  |   Commands:
+   /_/ |_|       help      -> Displays the help system
+   . . . .       object?   -> Display information about 'object'
+   . . . .       exit/quit -> Exit
+   . . . .
+   . . . .   More info at https://frida.re/docs/home/
+   . . . .
+   . . . .   Connected to Subsystem for Android TM  (id=127.0.0.1:58526)
+Spawning `com.takeaway.driver`...
+Frida Network Modifier V40 (Complete) Loaded!
+Spawned `com.takeaway.driver`. Resuming main thread!
+[Subsystem for Android TM ::com.takeaway.driver ]-> [*] Starting Interception...
+[*] Attached to okhttp3.internal.http.BridgeInterceptor
+
+================ [START] ================
+[REQUEST] URL: https://scoober-courier-api.scoober.com/shift-overview/courier/status
+[REQUEST] Method: GET
+[REQUEST] Headers:
+    Authorization: Bearer [B@bc10e29
+    agent: android-app-v3.36.0
+[REQUEST] Body: (none)
+[REQ-MODIFIER] Request was NOT modified.
+[RESPONSE] Code: 401
+[RESPONSE] Original Body:
+Jwt is not in the form of Header.Payload.Signature with two dots and 3 sections
+[RESP-MODIFIER] Response was NOT modified.
+================= [END] =================
+
+
+================ [START] ================
+[REQUEST] URL: https://scoober-courier-api.scoober.com/v1/settings/analytics
+[REQUEST] Method: GET
+[REQUEST] Headers:
+    Authorization: Bearer [B@bc10e29
+    agent: android-app-v3.36.0
+[REQUEST] Body: (none)
+[REQ-MODIFIER] Request was NOT modified.
+[RESPONSE] Code: 401
+[RESPONSE] Original Body:
+Jwt is not in the form of Header.Payload.Signature with two dots and 3 sections
+[RESP-MODIFIER] Response was NOT modified.
+================= [END] =================
+
+
+================ [START] ================
+[REQUEST] URL: https://api.scoober.com/v2/version/user
+[REQUEST] Method: PUT
+[REQUEST] Headers:
+    accessToken: 7b6224dd0ea641a4b392600e56e775b0bca48d5711694114abdedc17276f3675
+    agent: android-app-v3.36.0
+[REQUEST] Original Body:
+{"operatingSystem":"ANDROID","version":"3.36.0"}
+[REQ-MODIFIER] Request was NOT modified.
+[RESPONSE] Code: 200
+[RESPONSE] Original Body:
+{"header":{"success":false,"dateTime":"Wed Oct 29 14:10:37 UTC 2025","errorCodes":["13008","The provided version is not known"]}}
+[RESP-MODIFIER] Response was NOT modified.
+================= [END] =================
+
+
+================ [START] ================
+[REQUEST] URL: https://api.scoober.com/v2/region/nl:arnhem
+[REQUEST] Method: GET
+[REQUEST] Headers:
+    accessToken: 7b6224dd0ea641a4b392600e56e775b0bca48d5711694114abdedc17276f3675
+    agent: android-app-v3.36.0
+[REQUEST] Body: (none)
+[REQ-MODIFIER] Request was NOT modified.
+[RESPONSE] Code: 200
+[RESPONSE] Original Body:
+{"country":"NL","city":"Arnhem","regionPrefix":"nl:arnhem","zipCodes":null,"position":[51.985104,5.89873],"range":2.3,"humanResourcesEmail":"courier-nl@takeaway.com","humanResourcesPhoneNumber":"+31203232356","dispositionPhoneNumber":"+31203232356","preOrderMinutes":0,"previewAssignmentEstimation":false,"assignmentEnabledBasedOnEstimation":false,"earliestAssignmentTimeRelativeToScheduledPickupInMinutes":0,"eventBasedRouter":true,"callerId":"+31203232356","zoneId":"Europe/Amsterdam","availableTravelModes":["bicycling","walking"]}
+[RESP-MODIFIER] Response was NOT modified.
+================= [END] =================
+
+
+================ [START] ================
+[REQUEST] URL: https://api.scoober.com/v2/drivers/315979
+[REQUEST] Method: GET
+[REQUEST] Headers:
+    Authorization: Bearer [B@bc10e29
+    agent: android-app-v3.36.0
+[REQUEST] Body: (none)
+[REQ-MODIFIER] Request was NOT modified.
+[RESPONSE] Code: 401
+[RESPONSE] Original Body:
+Jwt is not in the form of Header.Payload.Signature with two dots and 3 sections
+[RESP-MODIFIER] Response was NOT modified.
+================= [END] =================
+
+
+================ [START] ================
+[REQUEST] URL: https://shiftplanning-api.scoober.com/api/users/plannings?fromDate=2025-10-29&toDate=2025-10-29
+[REQUEST] Method: GET
+[REQUEST] Headers:
+    accessToken: 7b6224dd0ea641a4b392600e56e775b0bca48d5711694114abdedc17276f3675
+    agent: android-app-v3.36.0
+[REQUEST] Body: (none)
+[REQ-MODIFIER] Request was NOT modified.
+[RESPONSE] Code: 200
+[RESPONSE] Original Body:
+[]
+[RESP-MODIFIER] Response was NOT modified.
+================= [END] =================
+
+
+================ [START] ================
+[REQUEST] URL: https://scoober-courier-api.scoober.com/v1/jwtmigration/refreshToken
+[REQUEST] Method: POST
+[REQUEST] Headers:
+    Authorization: Bearer eyJraWQiOiJqd3RtaWdyYXRpb25yZWZyZXNoIiwiYWxnIjoiUlMyNTYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwOi8vc2Nvb2Jlci5qd3RtaWdyYXRpb24iLCJ1c2VybmFtZSI6IjMxNTk3OSIsInN1YiI6IjMxNTk3OSIsInJlZ2lvbiI6Im5sOmFybmhlbSIsImV4cCI6MTc2MTc3NzQwOCwiaWF0IjoxNzYxNzQxNDA4LCJqdGkiOiI2YTM3M2I4Yy0yNzQ3LTRiMDktYTJhZi1hMTJjOWJlZjJkOTEifQ.N5MBsgnZ0i5sVR_ZaGNSOP8uyHyt9fjBT__NuDkoBTeV6QtwQuwkgrfiLVAM-H-D3JfpDglmCsdtA3X7CzQ0VxxkGUGSC__jJSvAWZBK4JOpI-X-JbNMpo8KX6xBOJfZ3-xJt-IHcsB2trMZxnIkQfrR5LmqoPRzqwvzgRE2i6MtqjSi1etb5-WoYHB6fHurz3daCXkozAdWGqDnnuLlvxxhRsIbxrascEMXPRvChb4xbZjdB3DPWhYN3CxR0woWRO6LAYdeAnoWlCcEWmpWBVT3w1kCZ2UhpsWsmyLJvZMRr1t0dOykHa0RFaDLMmGN2TGj1pHKOTKvT4nOjEFbfQ
+    agent: android-app-v3.36.0
+[REQUEST] Original Body:
+
+[REQ-MODIFIER] Request was NOT modified.
+[RESPONSE] Code: 201
+[RESPONSE] Original Body:
+{"jwtToken":"eyJraWQiOiJqd3RtaWdyYXRpb24iLCJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwOi8vc2Nvb2Jlci5qd3RtaWdyYXRpb24iLCJ1c2VybmFtZSI6IjMxNTk3OSIsInN1YiI6IjMxNTk3OSIsInJlZ2lvbiI6Im5sOmFybmhlbSIsImV4cCI6MTc2MTc1MDYzNywiaWF0IjoxNzYxNzQ3MDM3LCJqdGkiOiJmODdhOWEzZS1kYjY0LTQ2ZGItYjg1Ny0yMGUxZWE3NjJkZjkifQ.j1ifBJNBqHGHrME8LO2pmU0-PMK7EhQaoiNDx54nPuNgRbAZmQc5Y2cYFT0Byvvok-9sXD4aV0VX12s00rSyn-C2_a1btB3QEZ_hFKA2NkWHIpb7qkq8sQkhOTSoEl_DlM4a1SIOgvwkZfBToPmMgZIY_zNPavSt8wJcZPJVi2vnzezOz-0OCeXsdhvybfWFouwP8paw7kw2A8FgMQNVooUdDrIiaQTpXhG0Qms88t1mxOcUgFhxMMK53Gc8N3ZnekXn3FQfANGfvZoAmXpMymp0cgYJ05G-i7KjX0_526j3D6foko3ZTtue13vTFzU4IKTv5ccZkLJN3KjGd9-2iA"}
+[RESP-MODIFIER] Response was NOT modified.
+================= [END] =================
+
+
+================ [START] ================
+[REQUEST] URL: https://shiftplanning-api.scoober.com/api/users/me/city-rules
+[REQUEST] Method: GET
+[REQUEST] Headers:
+    accessToken: 7b6224dd0ea641a4b392600e56e775b0bca48d5711694114abdedc17276f3675
+    agent: android-app-v3.36.0
+[REQUEST] Body: (none)
+[REQ-MODIFIER] Request was NOT modified.
+[RESPONSE] Code: 200
+[RESPONSE] Original Body:
+{"endingTime":"22:30","maxShiftDuration":300,"minBreakDuration":0,"minShiftDuration":180,"openingHours":{"friday":{"end":"22:30","start":"11:00","isClosed":false},"monday":{"end":"22:30","start":"11:00","isClosed":false},"saturday":{"end":"22:30","start":"11:00","isClosed":false},"sunday":{"end":"22:30","start":"11:00","isClosed":false},"thursday":{"end":"22:30","start":"11:00","isClosed":false},"tuesday":{"end":"22:30","start":"11:00","isClosed":false},"wednesday":{"end":"22:30","start":"11:00","isClosed":false}},"startingTime":"11:00"}
+[RESP-MODIFIER] >>> Target 'city-rules' FOUND. Attempting to modify opening hours...
+[RESP-MODIFIER] Updated opening hours for all days.
+[RESP-MODIFIER] Old minShiftDuration: 180
+[RESP-MODIFIER] New minShiftDuration: 1
+[RESP-MODIFIER] Old maxShiftDuration: 300
+[RESP-MODIFIER] New maxShiftDuration: 600
+[RESP-MODIFIER] Old startingTime: 11:00
+[RESP-MODIFIER] New startingTime: 10:00
+[RESP-MODIFIER] Old endingTime: 22:30
+[RESP-MODIFIER] New endingTime: 23:00
+[RESP-MODIFIER] New Body Sent to App:
+{"endingTime":"23:00","maxShiftDuration":600,"minBreakDuration":0,"minShiftDuration":1,"openingHours":{"friday":{"end":"23:00","start":"10:00","isClosed":false},"monday":{"end":"23:00","start":"10:00","isClosed":false},"saturday":{"end":"23:00","start":"10:00","isClosed":false},"sunday":{"end":"23:00","start":"10:00","isClosed":false},"thursday":{"end":"23:00","start":"10:00","isClosed":false},"tuesday":{"end":"23:00","start":"10:00","isClosed":false},"wednesday":{"end":"23:00","start":"10:00","isClosed":false}},"startingTime":"10:00"}
+[RESP-MODIFIER] Response was MODIFIED.
+================= [END] =================
+
+
+================ [START] ================
+[REQUEST] URL: https://scoober-courier-api.scoober.com/shift-overview/overview
+[REQUEST] Method: GET
+[REQUEST] Headers:
+    Accept-Language: en
+    Accept-Time-Format: 24h
+    Content-Type: application/json; v=2
+    Authorization: Bearer eyJraWQiOiJqd3RtaWdyYXRpb24iLCJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwOi8vc2Nvb2Jlci5qd3RtaWdyYXRpb24iLCJ1c2VybmFtZSI6IjMxNTk3OSIsInN1YiI6IjMxNTk3OSIsInJlZ2lvbiI6Im5sOmFybmhlbSIsImV4cCI6MTc2MTc1MDYzNywiaWF0IjoxNzYxNzQ3MDM3LCJqdGkiOiJmODdhOWEzZS1kYjY0LTQ2ZGItYjg1Ny0yMGUxZWE3NjJkZjkifQ.j1ifBJNBqHGHrME8LO2pmU0-PMK7EhQaoiNDx54nPuNgRbAZmQc5Y2cYFT0Byvvok-9sXD4aV0VX12s00rSyn-C2_a1btB3QEZ_hFKA2NkWHIpb7qkq8sQkhOTSoEl_DlM4a1SIOgvwkZfBToPmMgZIY_zNPavSt8wJcZPJVi2vnzezOz-0OCeXsdhvybfWFouwP8paw7kw2A8FgMQNVooUdDrIiaQTpXhG0Qms88t1mxOcUgFhxMMK53Gc8N3ZnekXn3FQfANGfvZoAmXpMymp0cgYJ05G-i7KjX0_526j3D6foko3ZTtue13vTFzU4IKTv5ccZkLJN3KjGd9-2iA
+    agent: android-app-v3.36.0
+[REQUEST] Body: (none)
+[REQ-MODIFIER] Request was NOT modified.
+[RESPONSE] Code: 200
+[RESPONSE] Original Body:
+[{"header":{"title_left":"FRI 10/31/25","title_right":"09:00 h","text":"12:00 - 21:30","icon":"clock"},"shift_groups":[{"shift_sections":[{"text":"12:00 - 16:30","progress_status":"not_started","tags":[],"starting_zone":{"name":"Mcdonalds Arnhem Station","lat":51.98409669999999,"lon":5.9027422,"button":{"text":"Navigate","state":"enabled","icon":"geolocation","action":"navigation"}}},{"text":"17:00 - 21:30","progress_status":"not_started","tags":[]}]}],"state":"PRE_SHIFT","date":"2025-10-31"}]
+[RESP-MODIFIER] Response was NOT modified.
+================= [END] =================
+
+
+================ [START] ================
+[REQUEST] URL: https://scoober-courier-api.scoober.com/v1/jwtmigration/refreshToken
+[REQUEST] Method: POST
+[REQUEST] Headers:
+    Authorization: Bearer eyJraWQiOiJqd3RtaWdyYXRpb25yZWZyZXNoIiwiYWxnIjoiUlMyNTYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwOi8vc2Nvb2Jlci5qd3RtaWdyYXRpb24iLCJ1c2VybmFtZSI6IjMxNTk3OSIsInN1YiI6IjMxNTk3OSIsInJlZ2lvbiI6Im5sOmFybmhlbSIsImV4cCI6MTc2MTc3NzQwOCwiaWF0IjoxNzYxNzQxNDA4LCJqdGkiOiI2YTM3M2I4Yy0yNzQ3LTRiMDktYTJhZi1hMTJjOWJlZjJkOTEifQ.N5MBsgnZ0i5sVR_ZaGNSOP8uyHyt9fjBT__NuDkoBTeV6QtwQuwkgrfiLVAM-H-D3JfpDglmCsdtA3X7CzQ0VxxkGUGSC__jJSvAWZBK4JOpI-X-JbNMpo8KX6xBOJfZ3-xJt-IHcsB2trMZxnIkQfrR5LmqoPRzqwvzgRE2i6MtqjSi1etb5-WoYHB6fHurz3daCXkozAdWGqDnnuLlvxxhRsIbxrascEMXPRvChb4xbZjdB3DPWhYN3CxR0woWRO6LAYdeAnoWlCcEWmpWBVT3w1kCZ2UhpsWsmyLJvZMRr1t0dOykHa0RFaDLMmGN2TGj1pHKOTKvT4nOjEFbfQ
+    agent: android-app-v3.36.0
+[REQUEST] Original Body:
+
+[REQ-MODIFIER] Request was NOT modified.
+[RESPONSE] Code: 201
+[RESPONSE] Original Body:
+{"jwtToken":"eyJraWQiOiJqd3RtaWdyYXRpb24iLCJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwOi8vc2Nvb2Jlci5qd3RtaWdyYXRpb24iLCJ1c2VybmFtZSI6IjMxNTk3OSIsInN1YiI6IjMxNTk3OSIsInJlZ2lvbiI6Im5sOmFybmhlbSIsImV4cCI6MTc2MTc1MDYzOCwiaWF0IjoxNzYxNzQ3MDM4LCJqdGkiOiJlMzJmYjBiOC0zZWM3LTRhZjUtODVmNi04NjAzZTNjMTZiOWEifQ.fWMN5DtKPhmjIFGqe_8zl4S8bbU-ofl3W8af51FdWnZlx2lwwlc23nNLJsjNd8-ZmD9D9kbsp2K8dCIq2AxjgD7L40mWsZO9rHQ5IsaJPtKVCMLmEl7MVEuFpYnr4M62ZT8V7W5JgUtBXWj8ByxapR7gJWYOonnpiJO0zA0TP4_sEJWEEs-NXRGIIePfBnXhJKhU_Kz-i47z5GKNOmG8LuyeNzypCUMSGL2foRprygulBBoSup2dy1w8emumqGJ6IzC9BfatBQ-JT_bq155gWMCS6KKmrXeFWFnFGfJ_QzTJTDQjZAwv9wVT8rvgNjM71t8EKAdCIRiNBiA8empxxA"}
+[RESP-MODIFIER] Response was NOT modified.
+================= [END] =================
+
+
+================ [START] ================
+[REQUEST] URL: https://scoober-courier-api.scoober.com/v1/jwtmigration/refreshToken
+[REQUEST] Method: POST
+[REQUEST] Headers:
+    Authorization: Bearer eyJraWQiOiJqd3RtaWdyYXRpb25yZWZyZXNoIiwiYWxnIjoiUlMyNTYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwOi8vc2Nvb2Jlci5qd3RtaWdyYXRpb24iLCJ1c2VybmFtZSI6IjMxNTk3OSIsInN1YiI6IjMxNTk3OSIsInJlZ2lvbiI6Im5sOmFybmhlbSIsImV4cCI6MTc2MTc3NzQwOCwiaWF0IjoxNzYxNzQxNDA4LCJqdGkiOiI2YTM3M2I4Yy0yNzQ3LTRiMDktYTJhZi1hMTJjOWJlZjJkOTEifQ.N5MBsgnZ0i5sVR_ZaGNSOP8uyHyt9fjBT__NuDkoBTeV6QtwQuwkgrfiLVAM-H-D3JfpDglmCsdtA3X7CzQ0VxxkGUGSC__jJSvAWZBK4JOpI-X-JbNMpo8KX6xBOJfZ3-xJt-IHcsB2trMZxnIkQfrR5LmqoPRzqwvzgRE2i6MtqjSi1etb5-WoYHB6fHurz3daCXkozAdWGqDnnuLlvxxhRsIbxrascEMXPRvChb4xbZjdB3DPWhYN3CxR0woWRO6LAYdeAnoWlCcEWmpWBVT3w1kCZ2UhpsWsmyLJvZMRr1t0dOykHa0RFaDLMmGN2TGj1pHKOTKvT4nOjEFbfQ
+    agent: android-app-v3.36.0
+[REQUEST] Original Body:
+
+[REQ-MODIFIER] Request was NOT modified.
+[RESPONSE] Code: 201
+[RESPONSE] Original Body:
+{"jwtToken":"eyJraWQiOiJqd3RtaWdyYXRpb24iLCJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwOi8vc2Nvb2Jlci5qd3RtaWdyYXRpb24iLCJ1c2VybmFtZSI6IjMxNTk3OSIsInN1YiI6IjMxNTk3OSIsInJlZ2lvbiI6Im5sOmFybmhlbSIsImV4cCI6MTc2MTc1MDYzOCwiaWF0IjoxNzYxNzQ3MDM4LCJqdGkiOiJjNmQwZTg2MS0wMDIxLTQ5NjUtYWRhZC1mNDQyNWRkOTEwNDQifQ.Toqg9w2Pbkf8u7lk8k5U92a3AYKGURQQkC0_aG_q8eZaUPRo8eDragUpE4VAj9m__nPYOVuq7oJqcgNWNBpXWfnvhJBnoGF6nrsoeewjflnHyzf5tZpEoyBnLY4nHdQ-mHBsdIozF6RV9SSlb1FuuyHo_U-M2Q2hufzLAnsWxhhftGbb_xSIxc4KPwTWesAkEjFQlJ4b5MwzHbKUKqzFWoPDTBgti_8uZTDpS96Jw9s5q0HJ8m-5_WLke8AP6IynjEb7Euz2l8wJHXU8B1fgBCNBpLhY2Hr3kyd0BI5_2AB0JBKp57vzYx0XwKL5l-_vP602IfXeVD-u5em1UO0d7w"}
+[RESP-MODIFIER] Response was NOT modified.
+================= [END] =================
+
+
+================ [START] ================
+[REQUEST] URL: https://driver-notification.scoober.com/v1/notifications/subscribe
+[REQUEST] Method: PUT
+[REQUEST] Headers:
+    accessToken: 7b6224dd0ea641a4b392600e56e775b0bca48d5711694114abdedc17276f3675
+    agent: android-app-v3.36.0
+[REQUEST] Original Body:
+{"pushToken":"fCzKxEd7QQmPnajuVQ1Hk-:APA91bHOCo2miyOliSYW2yjKXKYPUZqLpMzovF2y0ItORrgWkqgyXIXGahs7LYJg3YVZPcubx_b-_AsIGS6s6UyGCwetOzNSPthrwvBE5ghG2_hnw7veEkY"}
+[REQ-MODIFIER] Request was NOT modified.
+[RESPONSE] Code: 200
+[RESPONSE] Original Body:
+
+[RESP-MODIFIER] Response was NOT modified.
+================= [END] =================
+
+
+================ [START] ================
+[REQUEST] URL: https://scoober-courier-api.scoober.com/v1/jwtmigration/refreshToken
+[REQUEST] Method: POST
+[REQUEST] Headers:
+    Authorization: Bearer eyJraWQiOiJqd3RtaWdyYXRpb25yZWZyZXNoIiwiYWxnIjoiUlMyNTYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwOi8vc2Nvb2Jlci5qd3RtaWdyYXRpb24iLCJ1c2VybmFtZSI6IjMxNTk3OSIsInN1YiI6IjMxNTk3OSIsInJlZ2lvbiI6Im5sOmFybmhlbSIsImV4cCI6MTc2MTc3NzQwOCwiaWF0IjoxNzYxNzQxNDA4LCJqdGkiOiI2YTM3M2I4Yy0yNzQ3LTRiMDktYTJhZi1hMTJjOWJlZjJkOTEifQ.N5MBsgnZ0i5sVR_ZaGNSOP8uyHyt9fjBT__NuDkoBTeV6QtwQuwkgrfiLVAM-H-D3JfpDglmCsdtA3X7CzQ0VxxkGUGSC__jJSvAWZBK4JOpI-X-JbNMpo8KX6xBOJfZ3-xJt-IHcsB2trMZxnIkQfrR5LmqoPRzqwvzgRE2i6MtqjSi1etb5-WoYHB6fHurz3daCXkozAdWGqDnnuLlvxxhRsIbxrascEMXPRvChb4xbZjdB3DPWhYN3CxR0woWRO6LAYdeAnoWlCcEWmpWBVT3w1kCZ2UhpsWsmyLJvZMRr1t0dOykHa0RFaDLMmGN2TGj1pHKOTKvT4nOjEFbfQ
+    agent: android-app-v3.36.0
+[REQUEST] Original Body:
+
+[REQ-MODIFIER] Request was NOT modified.
+[RESPONSE] Code: 201
+[RESPONSE] Original Body:
+{"jwtToken":"eyJraWQiOiJqd3RtaWdyYXRpb24iLCJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwOi8vc2Nvb2Jlci5qd3RtaWdyYXRpb24iLCJ1c2VybmFtZSI6IjMxNTk3OSIsInN1YiI6IjMxNTk3OSIsInJlZ2lvbiI6Im5sOmFybmhlbSIsImV4cCI6MTc2MTc1MDYzOCwiaWF0IjoxNzYxNzQ3MDM4LCJqdGkiOiJiYTVlYzc2NS1lODkxLTRjOTUtOWEzMi0wNjljMjYxYzg0YmYifQ.JfipakpRmp8nIK8srYeXgH2xAkXk_s1vdoR4d-Vdm8LidSptWoziAP7edVvhvhp1-Id9B0yS0OUlJSfXFxhfH4NSEbMT8AoDhQasAqLffNx-tdYaWdBYRU7_TIM3suizTnAiESWQSq9eSPD2_DodUBAJ7Md_6I1-OdVrNNF0YPtm0ITcq5kGGNUPp-Ac4P5jZPukeURFUK0cLlXuGfxHWSzQcELlakiE8Tzfdg7OxbXzhrkzBN3okzHPqRP3B4X7tvG2h2_4mKphhKiT69yCnWYxAAfLKqrkZK-HSFCZ1VfobIdVIqZmRxevr-cDbo4Xgkf4HQFATFhkrm_rQ9OiPQ"}
+[RESP-MODIFIER] Response was NOT modified.
+================= [END] =================
+
+
+================ [START] ================
+[REQUEST] URL: https://scoober-courier-api.scoober.com/shift-overview/courier/status
+[REQUEST] Method: GET
+[REQUEST] Headers:
+    agent: android-app-v3.36.0
+    Authorization: Bearer eyJraWQiOiJqd3RtaWdyYXRpb24iLCJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwOi8vc2Nvb2Jlci5qd3RtaWdyYXRpb24iLCJ1c2VybmFtZSI6IjMxNTk3OSIsInN1YiI6IjMxNTk3OSIsInJlZ2lvbiI6Im5sOmFybmhlbSIsImV4cCI6MTc2MTc1MDYzOCwiaWF0IjoxNzYxNzQ3MDM4LCJqdGkiOiJlMzJmYjBiOC0zZWM3LTRhZjUtODVmNi04NjAzZTNjMTZiOWEifQ.fWMN5DtKPhmjIFGqe_8zl4S8bbU-ofl3W8af51FdWnZlx2lwwlc23nNLJsjNd8-ZmD9D9kbsp2K8dCIq2AxjgD7L40mWsZO9rHQ5IsaJPtKVCMLmEl7MVEuFpYnr4M62ZT8V7W5JgUtBXWj8ByxapR7gJWYOonnpiJO0zA0TP4_sEJWEEs-NXRGIIePfBnXhJKhU_Kz-i47z5GKNOmG8LuyeNzypCUMSGL2foRprygulBBoSup2dy1w8emumqGJ6IzC9BfatBQ-JT_bq155gWMCS6KKmrXeFWFnFGfJ_QzTJTDQjZAwv9wVT8rvgNjM71t8EKAdCIRiNBiA8empxxA
+[REQUEST] Body: (none)
+[REQ-MODIFIER] Request was NOT modified.
+[RESPONSE] Code: 200
+[RESPONSE] Original Body:
+{"isWorking":false,"isLocationTrackingEnabled":false}
+[RESP-MODIFIER] Response was NOT modified.
+================= [END] =================
+
+
+================ [START] ================
+[REQUEST] URL: https://scoober-courier-api.scoober.com/v1/settings/analytics
+[REQUEST] Method: GET
+[REQUEST] Headers:
+    agent: android-app-v3.36.0
+    Authorization: Bearer eyJraWQiOiJqd3RtaWdyYXRpb24iLCJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwOi8vc2Nvb2Jlci5qd3RtaWdyYXRpb24iLCJ1c2VybmFtZSI6IjMxNTk3OSIsInN1YiI6IjMxNTk3OSIsInJlZ2lvbiI6Im5sOmFybmhlbSIsImV4cCI6MTc2MTc1MDYzOCwiaWF0IjoxNzYxNzQ3MDM4LCJqdGkiOiJjNmQwZTg2MS0wMDIxLTQ5NjUtYWRhZC1mNDQyNWRkOTEwNDQifQ.Toqg9w2Pbkf8u7lk8k5U92a3AYKGURQQkC0_aG_q8eZaUPRo8eDragUpE4VAj9m__nPYOVuq7oJqcgNWNBpXWfnvhJBnoGF6nrsoeewjflnHyzf5tZpEoyBnLY4nHdQ-mHBsdIozF6RV9SSlb1FuuyHo_U-M2Q2hufzLAnsWxhhftGbb_xSIxc4KPwTWesAkEjFQlJ4b5MwzHbKUKqzFWoPDTBgti_8uZTDpS96Jw9s5q0HJ8m-5_WLke8AP6IynjEb7Euz2l8wJHXU8B1fgBCNBpLhY2Hr3kyd0BI5_2AB0JBKp57vzYx0XwKL5l-_vP602IfXeVD-u5em1UO0d7w
+[REQUEST] Body: (none)
+[REQ-MODIFIER] Request was NOT modified.
+[RESPONSE] Code: 200
+[RESPONSE] Original Body:
+{"value":"ANALYTICS"}
+[RESP-MODIFIER] Response was NOT modified.
+================= [END] =================
+
+
+================ [START] ================
+[REQUEST] URL: https://api.scoober.com/v2/drivers/315979
+[REQUEST] Method: GET
+[REQUEST] Headers:
+    agent: android-app-v3.36.0
+    Authorization: Bearer eyJraWQiOiJqd3RtaWdyYXRpb24iLCJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwOi8vc2Nvb2Jlci5qd3RtaWdyYXRpb24iLCJ1c2VybmFtZSI6IjMxNTk3OSIsInN1YiI6IjMxNTk3OSIsInJlZ2lvbiI6Im5sOmFybmhlbSIsImV4cCI6MTc2MTc1MDYzOCwiaWF0IjoxNzYxNzQ3MDM4LCJqdGkiOiJiYTVlYzc2NS1lODkxLTRjOTUtOWEzMi0wNjljMjYxYzg0YmYifQ.JfipakpRmp8nIK8srYeXgH2xAkXk_s1vdoR4d-Vdm8LidSptWoziAP7edVvhvhp1-Id9B0yS0OUlJSfXFxhfH4NSEbMT8AoDhQasAqLffNx-tdYaWdBYRU7_TIM3suizTnAiESWQSq9eSPD2_DodUBAJ7Md_6I1-OdVrNNF0YPtm0ITcq5kGGNUPp-Ac4P5jZPukeURFUK0cLlXuGfxHWSzQcELlakiE8Tzfdg7OxbXzhrkzBN3okzHPqRP3B4X7tvG2h2_4mKphhKiT69yCnWYxAAfLKqrkZK-HSFCZ1VfobIdVIqZmRxevr-cDbo4Xgkf4HQFATFhkrm_rQ9OiPQ
+[REQUEST] Body: (none)
+[REQ-MODIFIER] Request was NOT modified.
+[RESPONSE] Code: 200
+[RESPONSE] Original Body:
+{"id":315979,"status":1,"countryCode":"nl","city":"arnhem","chain":null,"updatedOn":1761598807000,"email":"jt.los+thuisbezorgd@proton.me","jobFilter":1,"firstname":"Julian","lastname":"Los","vehicleType":4,"datevId":null,"mobilePhoneNumber":"+31615331590","landlinePhoneNumber":"+31615331590","salutation":"m","agency":"365Werk Payroll","age":21,"contractWon":"Won","vehicleOwnership":"DRIVER","isWorking":false,"isPaused":false,"isFlexCourier":false}
+[RESP-MODIFIER] Response was NOT modified.
+================= [END] =================
+
+
+================ [START] ================
+[REQUEST] URL: https://scoober-courier-api.scoober.com/v1/notification/subscriptions
+[REQUEST] Method: POST
+[REQUEST] Headers:
+    Accept-Language: en
+    Authorization: Bearer eyJraWQiOiJqd3RtaWdyYXRpb24iLCJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwOi8vc2Nvb2Jlci5qd3RtaWdyYXRpb24iLCJ1c2VybmFtZSI6IjMxNTk3OSIsInN1YiI6IjMxNTk3OSIsInJlZ2lvbiI6Im5sOmFybmhlbSIsImV4cCI6MTc2MTc1MDYzOCwiaWF0IjoxNzYxNzQ3MDM4LCJqdGkiOiJjNmQwZTg2MS0wMDIxLTQ5NjUtYWRhZC1mNDQyNWRkOTEwNDQifQ.Toqg9w2Pbkf8u7lk8k5U92a3AYKGURQQkC0_aG_q8eZaUPRo8eDragUpE4VAj9m__nPYOVuq7oJqcgNWNBpXWfnvhJBnoGF6nrsoeewjflnHyzf5tZpEoyBnLY4nHdQ-mHBsdIozF6RV9SSlb1FuuyHo_U-M2Q2hufzLAnsWxhhftGbb_xSIxc4KPwTWesAkEjFQlJ4b5MwzHbKUKqzFWoPDTBgti_8uZTDpS96Jw9s5q0HJ8m-5_WLke8AP6IynjEb7Euz2l8wJHXU8B1fgBCNBpLhY2Hr3kyd0BI5_2AB0JBKp57vzYx0XwKL5l-_vP602IfXeVD-u5em1UO0d7w
+    agent: android-app-v3.36.0
+[REQUEST] Original Body:
+{"acceptingNotifications":["scoober.apps_core.back_routing","scoober.apps_core.tipping","scoober.apps_core.job_ready_for_pick_up","scoober.apps_core.shift_finished","scoober.apps_core.clock_on_available","scoober.apps_core.job_assigned","scoober.apps_core.job_removed","scoober.apps_core.job_assigned_pooled","scoober.apps_core.offer_made","scoober.apps_core.offer_rejected","scoober.apps_core.offer_scope_expanded","scoober.apps_core.offer_scope_reduced","scoober.apps_core.offer_revoked","scoober.apps_core.offer_expired","scoober.apps_core.offer_made_pooled","scoober.apps_core.shift_paused","scoober.apps_core.shift_resumed"],"appIdentifier":"SCOOBER","deviceToken":"fCzKxEd7QQmPnajuVQ1Hk-:APA91bHOCo2miyOliSYW2yjKXKYPUZqLpMzovF2y0ItORrgWkqgyXIXGahs7LYJg3YVZPcubx_b-_AsIGS6s6UyGCwetOzNSPthrwvBE5ghG2_hnw7veEkY","mobileOS":"ANDROID"}
+[REQ-MODIFIER] Request was NOT modified.
+[RESPONSE] Code: 201
+[RESPONSE] Original Body:
+
+[RESP-MODIFIER] Response was NOT modified.
+================= [END] =================
+
+
+================ [START] ================
+[REQUEST] URL: https://shiftplanning-api.scoober.com/api/users/plannings?fromDate=2025-10-29&toDate=2025-10-29
+[REQUEST] Method: GET
+[REQUEST] Headers:
+    accessToken: 7b6224dd0ea641a4b392600e56e775b0bca48d5711694114abdedc17276f3675
+    agent: android-app-v3.36.0
+[REQUEST] Body: (none)
+[REQ-MODIFIER] Request was NOT modified.
+[RESPONSE] Code: 200
+[RESPONSE] Original Body:
+[]
+[RESP-MODIFIER] Response was NOT modified.
+================= [END] =================
+
+
+================ [START] ================
+[REQUEST] URL: https://scoober-courier-api.scoober.com/v1/jwtmigration/refreshToken
+[REQUEST] Method: POST
+[REQUEST] Headers:
+    Authorization: Bearer eyJraWQiOiJqd3RtaWdyYXRpb25yZWZyZXNoIiwiYWxnIjoiUlMyNTYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwOi8vc2Nvb2Jlci5qd3RtaWdyYXRpb24iLCJ1c2VybmFtZSI6IjMxNTk3OSIsInN1YiI6IjMxNTk3OSIsInJlZ2lvbiI6Im5sOmFybmhlbSIsImV4cCI6MTc2MTc3NzQwOCwiaWF0IjoxNzYxNzQxNDA4LCJqdGkiOiI2YTM3M2I4Yy0yNzQ3LTRiMDktYTJhZi1hMTJjOWJlZjJkOTEifQ.N5MBsgnZ0i5sVR_ZaGNSOP8uyHyt9fjBT__NuDkoBTeV6QtwQuwkgrfiLVAM-H-D3JfpDglmCsdtA3X7CzQ0VxxkGUGSC__jJSvAWZBK4JOpI-X-JbNMpo8KX6xBOJfZ3-xJt-IHcsB2trMZxnIkQfrR5LmqoPRzqwvzgRE2i6MtqjSi1etb5-WoYHB6fHurz3daCXkozAdWGqDnnuLlvxxhRsIbxrascEMXPRvChb4xbZjdB3DPWhYN3CxR0woWRO6LAYdeAnoWlCcEWmpWBVT3w1kCZ2UhpsWsmyLJvZMRr1t0dOykHa0RFaDLMmGN2TGj1pHKOTKvT4nOjEFbfQ
+    agent: android-app-v3.36.0
+[REQUEST] Original Body:
+
+[REQ-MODIFIER] Request was NOT modified.
+[RESPONSE] Code: 201
+[RESPONSE] Original Body:
+{"jwtToken":"eyJraWQiOiJqd3RtaWdyYXRpb24iLCJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwOi8vc2Nvb2Jlci5qd3RtaWdyYXRpb24iLCJ1c2VybmFtZSI6IjMxNTk3OSIsInN1YiI6IjMxNTk3OSIsInJlZ2lvbiI6Im5sOmFybmhlbSIsImV4cCI6MTc2MTc1MDYzOSwiaWF0IjoxNzYxNzQ3MDM5LCJqdGkiOiI4NjMyMTJiNS1jYjY2LTQ5NGEtYjk5Zi05NTZlZmJmNGY4MjMifQ.TYOfo2dF8-S2diHGaRkZtPiYS_jjrIeyIz3y1soOYFGsB6FY5IZQsfxw__yPXefRxz3sqLafGeFM8Na04hKuvszQbYKowdeHmT_mMTlQIZu4ZywG-ycjyMN_jrcVepraU76alUDZ8xl0aKjxBEXG2L6u3qzZK68CtJ8Ndkmw-yEamERrA9EgwfxWkUFDlhmvhstkB8duSVBRr0cw_aa26N9E73FhJZ4jO2DdGpxWZQ4e5ix6rFSEwGtNtlAKLkc-xg-1TMyPZ6SDjX3jUrbsD-Rsp2bTPq6CLQMeU2hlqn0_z-KzIsAkVdc0wxIF0kDD2NuhtgbTfo3bKVwaMVtEQA"}
+[RESP-MODIFIER] Response was NOT modified.
+================= [END] =================
+
+
+================ [START] ================
+[REQUEST] URL: https://ws-9ad99983-443c-4705-a6c4-1a807883a38e.sendbird.com/?p=Android&pv=33&sv=4.30.0&ai=9AD99983-443C-4705-A6C4-1A807883A38E&SB-User-Agent=Android%2Fc1.0.10&include_extra_data=premium_feature_list%2Cfile_upload_size_limit%2Capplication_attributes%2Cemoji_hash%2Cnotifications%2Cmessage_template%2Cai_agent&SB-SDK-User-Agent=main_sdk_info%3Dchat%2Fandroid%2F4.30.0%26device_os_platform%3Dandroid%26os_version%3D33%26auth_sdk_info%3Dauth%2Fandroid%2F1.0.10&user_id=315979&active=0&include_poll_details=1&use_local_cache=1&pmce=1&config_ts=0
+[REQUEST] Method: GET
+[REQUEST] Headers:
+    User-Agent: Jand/4.30.0
+    Request-Sent-Timestamp: 1761747037140
+    SENDBIRD-WS-TOKEN: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1Ijo2MTc1NDY3MjAsInYiOjEsImUiOjE3NjE4Mjc4MDh9.TKeVODvdcRXQ3umRxd3QhMINNFjxyMnu2e-pOCEjCsg
+    Upgrade: websocket
+    Connection: Upgrade
+    Sec-WebSocket-Key: Hji1pVCeOvWZTbMB3eZezw==
+    Sec-WebSocket-Version: 13
+    Sec-WebSocket-Extensions: permessage-deflate
+[REQUEST] Body: (none)
+[REQ-MODIFIER] Request was NOT modified.
+[RESPONSE] Code: 101
+[RESPONSE] Original Body:
+
+[RESP-MODIFIER] Response was NOT modified.
+================= [END] =================
+
+
+================ [START] ================
+[REQUEST] URL: https://api-9ad99983-443c-4705-a6c4-1a807883a38e.sendbird.com/
+[REQUEST] Method: GET
+[REQUEST] Headers:
+    Accept: application/json
+    User-Agent: Jand/4.30.0
+    SB-User-Agent: Android/c1.0.10
+    SB-SDK-User-Agent: main_sdk_info=chat/android/4.30.0&device_os_platform=android&os_version=33&auth_sdk_info=auth/android/1.0.10
+    SendBird: Android,33,4.30.0,9AD99983-443C-4705-A6C4-1A807883A38E
+    Connection: keep-alive
+    Request-Sent-Timestamp: 1761747037144
+    Accept-Encoding: br,gzip
+[REQUEST] Body: (none)
+[REQ-MODIFIER] Request was NOT modified.
+[RESPONSE] Code: 200
+[RESPONSE] Original Body:
+{"message": "SendBird API Endpoint.", "error": true}
+[RESP-MODIFIER] Response was NOT modified.
+================= [END] =================
+
+
+================ [START] ================
+[REQUEST] URL: https://api-9ad99983-443c-4705-a6c4-1a807883a38e.sendbird.com/
+[REQUEST] Method: GET
+[REQUEST] Headers:
+    Accept: application/json
+    User-Agent: Jand/4.30.0
+    SB-User-Agent: Android/c1.0.10
+    SB-SDK-User-Agent: main_sdk_info=chat/android/4.30.0&device_os_platform=android&os_version=33&auth_sdk_info=auth/android/1.0.10
+    SendBird: Android,33,4.30.0,9AD99983-443C-4705-A6C4-1A807883A38E
+    Connection: keep-alive
+    Request-Sent-Timestamp: 1761747037144
+    Accept-Encoding: br,gzip
+[REQUEST] Body: (none)
+[REQ-MODIFIER] Request was NOT modified.
+[RESPONSE] Code: 200
+[RESPONSE] Original Body:
+{"message": "SendBird API Endpoint.", "error": true}
+[RESP-MODIFIER] Response was NOT modified.
+================= [END] =================
+
+
+================ [START] ================
+[REQUEST] URL: https://api-9ad99983-443c-4705-a6c4-1a807883a38e.sendbird.com/v3/users/315979/push/gcm
+[REQUEST] Method: POST
+[REQUEST] Headers:
+    Accept: application/json
+    User-Agent: Jand/4.30.0
+    SB-User-Agent: Android/c1.0.10
+    SB-SDK-User-Agent: main_sdk_info=chat/android/4.30.0&device_os_platform=android&os_version=33&auth_sdk_info=auth/android/1.0.10
+    SendBird: Android,33,4.30.0,9AD99983-443C-4705-A6C4-1A807883A38E
+    Connection: keep-alive
+    Request-Sent-Timestamp: 1761747037554
+    Session-Key: 83c462aa01eb575793e43dcc54cfd7d5db54e3da
+    Accept-Encoding: br,gzip
+[REQUEST] Original Body:
+{"gcm_reg_token":"fCzKxEd7QQmPnajuVQ1Hk-:APA91bHOCo2miyOliSYW2yjKXKYPUZqLpMzovF2y0ItORrgWkqgyXIXGahs7LYJg3YVZPcubx_b-_AsIGS6s6UyGCwetOzNSPthrwvBE5ghG2_hnw7veEkY","is_unique":true,"always_push":false,"system_push_enabled":true,"device_manufacturer":"Subsystem for Android(TM)-Microsoft Corporation","device_os":"android-33"}
+[REQ-MODIFIER] Request was NOT modified.
+[RESPONSE] Code: 200
+[RESPONSE] Original Body:
+\ufffd
+[RESP-MODIFIER] Response was NOT modified.
+================= [END] =================
+
+
+================ [START] ================
+[REQUEST] URL: https://api-9ad99983-443c-4705-a6c4-1a807883a38e.sendbird.com/v3/users/315979/unread_message_count?super_mode=all
+[REQUEST] Method: GET
+[REQUEST] Headers:
+    Accept: application/json
+    User-Agent: Jand/4.30.0
+    SB-User-Agent: Android/c1.0.10
+    SB-SDK-User-Agent: main_sdk_info=chat/android/4.30.0&device_os_platform=android&os_version=33&auth_sdk_info=auth/android/1.0.10
+    SendBird: Android,33,4.30.0,9AD99983-443C-4705-A6C4-1A807883A38E
+    Connection: keep-alive
+    Request-Sent-Timestamp: 1761747037762
+    Session-Key: 83c462aa01eb575793e43dcc54cfd7d5db54e3da
+    Accept-Encoding: br,gzip
+[REQUEST] Body: (none)
+[REQ-MODIFIER] Request was NOT modified.
+[RESPONSE] Code: 200
+[RESPONSE] Original Body:
+{"unread_count":18}
+[RESP-MODIFIER] Response was NOT modified.
+================= [END] =================
+
+
+================ [START] ================
+[REQUEST] URL: https://browser-intake-datadoghq.eu/api/v2/logs?ddsource=android
+[REQUEST] Method: POST
+[REQUEST] Headers:
+    DD-API-KEY: pubbbb1bca8d28335c8bd91adb52445385b
+    DD-EVP-ORIGIN: android
+    DD-EVP-ORIGIN-VERSION: 2.14.0
+    DD-REQUEST-ID: 342d86d5-10cd-4282-b385-fa22ef3267c1
+    User-Agent: Dalvik/2.1.0 (Linux; U; Android 13; Subsystem for Android(TM) Build/TQ3A.230901.001)
+    Content-Encoding: gzip
+[REQUEST] Body: (Gzipped, decompressing...)
+[REQUEST] Original Body:
+[{"status":"error","service":"com.takeaway.driver","message":"ChatServerInternalSendbirdSDKInitHelper | Connection error:","date":"2025-10-29T14:10:37.659Z","logger":{"name":"com.takeaway.driver","thread_name":"main","version":"2.14.0"},"_dd":{"device":{"architecture":"x86_64"}},"usr":{"id":"315979"},"network":{"client":{"downlink_kbps":"100000","uplink_kbps":"100000","connectivity":"NETWORK_WIFI"}},"error":{"kind":"java.lang.RuntimeException","message":"SendbirdChat.init() should be called with returning true prior to connect().","stack":"java.lang.RuntimeException: SendbirdChat.init() should be called with returning true prior to connect().\n\tat Lh.H.P(SendbirdChat.kt:88)\n\tat Lh.H.Q(SendbirdChat.kt:7)\n\tat com.takeaway.driver.chat.sendbird.initialisation.InternalSendbirdSDKInitHelper.connect(InternalSendbirdSDKInitHelper.kt:23)\n\tat com.takeaway.driver.chat.sendbird.initialisation.InternalSendbirdSDKInitHelper.access$connect(InternalSendbirdSDKInitHelper.kt:1)\n\tat com.takeaway.driver.chat.sendbird.initialisation.InternalSendbirdSDKInitHelper$getConnectionResult$2.invokeSuspend(InternalSendbirdSDKInitHelper.kt:57)\n\tat com.takeaway.driver.chat.sendbird.initialisation.InternalSendbirdSDKInitHelper$getConnectionResult$2.invoke(InternalSendbirdSDKInitHelper.kt:2)\n\tat com.takeaway.driver.chat.sendbird.initialisation.InternalSendbirdSDKInitHelper$getConnectionResult$2.invoke(InternalSendbirdSDKInitHelper.kt:1)\n\tat com.takeaway.driver.commons.util.CoroutinesExtensionsKt$executeTask$data$1.invokeSuspend(CoroutinesExtensions.kt:35)\n\tat kotlin.coroutines.jvm.internal.a.resumeWith(ContinuationImpl.kt:12)\n\tat kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:129)\n\tat kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:4)\n\tat kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:3)\n\tat kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:1)\n\tat kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:15)\n\tat kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:29)\n\tat kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:1)\n"},"ddtags":"env:prod,team:scoober-apps-amt,owner:cloudops,category:server,feature:chat,version:3.36.0,variant:prod"},{"status":"info","service":"com.takeaway.driver","message":"CommonsUserFeatureToggle | Remote config fetched, parameters updated: false, config: {\nage_verification: date_of_birth_enabled,\nalcohol_flow_enabled: true,\napp_store_review_demo_account_email: testdriver.palma@tk-qa.com,\nbonus_enabled: false,\ncall_dispo_enabled: true,\nchat_enabled: false,\nchat_tool: sendbird,\ncontact_form_enabled: true,\ncourier_contact_reasons_enabled: false,\ncourier_working_status_endpoint_v2_enabled: true,\ncustomer_courier_chat_enabled: true,\ndelivery_code_enabled: false,\ndelivery_flow_customer_address_on_pickup_enabled: true,\ndelivery_flow_detailed_address_in_route_overview_enabled: true,\ndelivery_flow_enabled: true,\ndelivery_flow_navigation_with_address_enabled: true,\ndriver_announcement_url: ,\neta_minute_difference_to_notify: 1,\nfaq_enabled: true,\nfirebase_performance_enabled: true,\ngeofence_meters: 100,\nhealth_status_questioning_enabled: false,\niOS_datadog_enabled: true,\niOS_waze_navigation_enabled: true,\nin_app_navigation_enabled: true,\ninline_translations_enabled: false,\ninstabug_enabled: true,\njob_seen_v2_enabled: false,\nlatest_version: 2.18.0,\nlocation_upload_interval_seconds: 15,\nlogout_v2_enabled: false,\nmin_supported_version: 3.22.0,\nminimum_working_hours_enabled: false,\nminimum_working_hours_factor: 1.5,\nnavigation_route_button_with_text: false,\nnew_analytics_setting_enabled: false,\nnew_analytics_tracking_enabled: true,\nnon_delivery_shift_type_enabled: true,\npast_midnight_shift_max_time: 07:00,\nrefer_a_friend_enabled: true,\nroad_snapped_location_enabled: true,\nroute_polylines_enabled: false,\nsendbird_ai_agent_enabled: false,\nsendbird_attachments_enabled: true,\nsendbird_uikit_enabled: true,\nshift_overview_clock_on_button_enabled: true,\nshift_pause_resume_enabled: true,\nshift_planning_monthly_statistics_enabled: false,\nshift_planning_statistics_enabled: false,\nshift_planning_v2_enabled: true,\nshift_resume_working_enabled: true,\nshould_display_eta_in_card_header: true,\nsse_events_datadog_logs_enabled: false,\ntipped_data_enabled: false,\ntipped_info_enabled: true,\nupcoming_shift_enabled: true\n}","date":"2025-10-29T14:10:39.877Z","logger":{"name":"com.takeaway.driver","thread_name":"main","version":"2.14.0"},"_dd":{"device":{"architecture":"x86_64"}},"usr":{"id":"315979"},"network":{"client":{"downlink_kbps":"100000","uplink_kbps":"100000","connectivity":"NETWORK_WIFI"}},"ddtags":"env:prod,owner:cloudops,feature:commons,category:user,team:scoober-apps-core,version:3.36.0,variant:prod"},{"status":"info","service":"com.takeaway.driver","message":"JobListServerSSE_DEBUG | StopEventFlow has been called","date":"2025-10-29T14:10:39.879Z","logger":{"name":"com.takeaway.driver","thread_name":"main","version":"2.14.0"},"_dd":{"device":{"architecture":"x86_64"}},"usr":{"id":"315979"},"network":{"client":{"downlink_kbps":"100000","uplink_kbps":"100000","connectivity":"NETWORK_WIFI"}},"ddtags":"env:prod,owner:cloudops,category:server,feature:joblist,team:scoober-apps-vst,version:3.36.0,variant:prod"},{"status":"info","service":"com.takeaway.driver","message":"ChatServerInternalSendbirdSDKInitHelper | Sendbird init ...","date":"2025-10-29T14:10:39.891Z","logger":{"name":"com.takeaway.driver","thread_name":"main","version":"2.14.0"},"_dd":{"device":{"architecture":"x86_64"}},"usr":{"id":"315979"},"network":{"client":{"downlink_kbps":"100000","uplink_kbps":"100000","connectivity":"NETWORK_WIFI"}},"ddtags":"env:prod,team:scoober-apps-amt,owner:cloudops,category:server,feature:chat,version:3.36.0,variant:prod"},{"status":"info","service":"com.takeaway.driver","message":"CCCHATServerinitCCChatManager | Initializing customer courier chat manager","date":"2025-10-29T14:10:39.893Z","logger":{"name":"com.takeaway.driver","thread_name":"main","version":"2.14.0"},"_dd":{"device":{"architecture":"x86_64"}},"usr":{"id":"315979"},"network":{"client":{"downlink_kbps":"100000","uplink_kbps":"100000","connectivity":"NETWORK_WIFI"}},"ddtags":"env:prod,owner:cloudops,feature:ccchat,category:server,team:scoober-apps-core,version:3.36.0,variant:prod"},{"status":"info","service":"com.takeaway.driver","message":"ChatServerInitResultHandler | onInitSucceed","date":"2025-10-29T14:10:39.915Z","logger":{"name":"com.takeaway.driver","thread_name":"main","version":"2.14.0"},"_dd":{"device":{"architecture":"x86_64"}},"usr":{"id":"315979"},"network":{"client":{"downlink_kbps":"100000","uplink_kbps":"100000","connectivity":"NETWORK_WIFI"}},"ddtags":"env:prod,team:scoober-apps-amt,owner:cloudops,category:server,feature:chat,version:3.36.0,variant:prod"},{"status":"info","service":"com.takeaway.driver","message":"ChatServerInternalSendbirdSDKInitHelper | onInitialized: Started FCM token observation","date":"2025-10-29T14:10:39.917Z","logger":{"name":"com.takeaway.driver","thread_name":"main","version":"2.14.0"},"_dd":{"device":{"architecture":"x86_64"}},"usr":{"id":"315979"},"network":{"client":{"downlink_kbps":"100000","uplink_kbps":"100000","connectivity":"NETWORK_WIFI"}},"ddtags":"env:prod,team:scoober-apps-amt,owner:cloudops,category:server,feature:chat,version:3.36.0,variant:prod"},{"status":"info","service":"com.takeaway.driver","message":"UpcomingshiftServerUpcomingShiftDetailsViewModel | upcomingShiftUseCase result: UpcomingShiftUI(header=UpcomingShiftHeaderUI(titleLeft=FRI 10/31/25, titleRight=09:00 h, text=12:00 - 21:30, icon=CLOCK), groups=[UpcomingShiftGroupUI(upcomingShiftSections=[UpcomingShiftInfoUI(duration=12:00 - 16:30, status=NOT_STARTED, tags=[], startingZone=StartingZoneUI(name=Mcdonalds Arnhem Station, lat=51.98409669999999, lon=5.9027422)), UpcomingShiftInfoUI(duration=17:00 - 21:30, status=NOT_STARTED, tags=[], startingZone=null)])], ctaButton=null, date=2025-10-31, state=PRE_SHIFT, shouldDisplayClockOnButton=false)","date":"2025-10-29T14:10:40.489Z","logger":{"name":"com.takeaway.driver","thread_name":"main","version":"2.14.0"},"_dd":{"device":{"architecture":"x86_64"}},"usr":{"id":"315979"},"network":{"client":{"downlink_kbps":"100000","uplink_kbps":"100000","connectivity":"NETWORK_WIFI"}},"ddtags":"env:prod,team:scoober-apps-amt,owner:cloudops,category:server,feature:upcomingshift,version:3.36.0,variant:prod"},{"status":"info","service":"com.takeaway.driver","message":"ChatServerSendBirdManagerHelperUtils | Sendbird fetchUnreadMessagesCount","date":"2025-10-29T14:10:40.578Z","logger":{"name":"com.takeaway.driver","thread_name":"DefaultDispatcher-worker-3","version":"2.14.0"},"_dd":{"device":{"architecture":"x86_64"}},"usr":{"id":"315979"},"network":{"client":{"downlink_kbps":"100000","uplink_kbps":"100000","connectivity":"NETWORK_WIFI"}},"ddtags":"env:prod,team:scoober-apps-amt,owner:cloudops,category:server,feature:chat,version:3.36.0,variant:prod"}]
+
+[REQ-MODIFIER] >>> Detected Datadog URL: https://browser-intake-datadoghq.eu/api/v2/logs?ddsource=android. Nullifying request.
+Request{method=POST, url=https://browser-intake-datadoghq.eu/api/v2/logs?ddsource=android}
+[REQ-MODIFIER] Request was MODIFIED.
+[RESPONSE] Code: 202
+[RESPONSE] Original Body:
+{"request_id":"342d86d5-10cd-4282-b385-fa22ef3267c1"}
+[RESP-MODIFIER] Response was NOT modified.
+================= [END] =================
+
+

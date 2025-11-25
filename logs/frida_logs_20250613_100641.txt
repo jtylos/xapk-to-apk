@@ -1,0 +1,3 @@
+[2025-06-13T08:06:44.312Z] Starting new logging session: 1749802004312
+ERROR: ReferenceError: 'Java' is not defined
+    at <eval> (/script1.js:27)

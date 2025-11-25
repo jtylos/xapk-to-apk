@@ -1,0 +1,64 @@
+Java.perform(function () {
+    // Target the Android PackageManager class
+    var PackageManager = Java.use("android.content.pm.PackageManager");
+    var Signature = Java.use("android.content.pm.Signature");
+    const cert = "308203873082026FA00302010202042A4FD91A300D06092A864886F70D01010B05003074310B3009060355040613024445310F300D060355040813064265726C696E310F300D060355040713064265726C696E31153013060355040A130C54616B65617761792E636F6D31153013060355040B130C53636F6F6265722041707073311530130603550403130C53636F6F6265722041707073301E170D3138313130363134313333365A170D3433313033313134313333365A3074310B3009060355040613024445310F300D060355040813064265726C696E310F300D060355040713064265726C696E31153013060355040A130C54616B65617761792E636F6D31153013060355040B130C53636F6F6265722041707073311530130603550403130C53636F6F626572204170707330820122300D06092A864886F70D01010105000382010F003082010A0282010100C643EE466FC0CF1568284458EA1F90BCC13FFBA298930A51AC8BF1CF01D940F2B9E9F6A2FCB010A71F42F1047B0FD873DD3CF4183A5AC1E02D59D054981D34E8A42BDE02ECF7C572F638F963EBA76E1115966E73D4A6002798C55FF850AB29C6A3F375444B1770228111115E27BA27D9C270F8F6C6A6044CA6BBB3D49E773FA855C10F97F687F3252F2B66B7D798B1DFDD0DB71CA68A0009CEF0449181BF46DB925E240A4C9A13338F73DD681D32E243C12A55B210B74FB6F8026E48A9BE79926BAB7331381ABB464C0DC48C8A860554E18A58962A8068A5F1D121D428879FE8343D1B5BD61651E8AEE675B511FC1B49473C748396B121A885C02CD3CB1F7BC50203010001A321301F301D0603551D0E0416041435CDC86DFCA599A7786173099ABFC1D6D3FFCDD9300D06092A864886F70D01010B0500038201010000FA9E2D0D0524ABF51049F68CCBBABAC82E916B6D5F8EA3D4B335E1B6C24E694A89D5FF6BF115DD3BD8A6699A6CF1B8F0F1A4493A7E80CA1DEB081498EBB0605F2EA2E44A84BC6A748E12FA8CF445EE10C914F9AB93DBC54E9FA3DDB7ADFA3F36F25B82D0084D6E5B28F9FB0218F82DD656421BE488E5B775AC0709986B7D90E7C39D7683350A5985DFF40BC30AC0265E682D1E4F421DBFA7F01E55F0BC4931E44937F0CDBC12D853D97D3ED628CF444D4108D0C3A2D4B7EC59B7DE4654197DEF7FBD8C2F4D5DDEE2EBCAB459E87D9022E5D7DBED3C17CF695C420A882DD012D12773F4010C22E013DDD98F005615CC81EDE642A72C28462A42B2FE01520427"
+
+    // Example: Hook getPackageInfo to modify the signatures returned
+    PackageManager.getPackageInfo.overload('java.lang.String', 'int').implementation = function (packageName, flags) {
+        console.log("[*] Hooking getPackageInfo for package: " + packageName);
+
+        // Call the original getPackageInfo method
+        var packageInfo = this.getPackageInfo(packageName, flags);
+
+        // Check if signatures are being requested (GET_SIGNATURES flag = 0x40)
+        if (flags & 0x40) {
+            console.log("[*] Signature check detected, spoofing signatures...");
+
+            // Create a fake signature
+            var fakeSignature = Signature.$new(cert); // Replace with your desired signature hex
+            var signatureArray = Java.array('android.content.pm.Signature', [fakeSignature]);
+
+            // Modify the packageInfo.signatures field to return the fake signature
+            packageInfo.signatures.value = signatureArray;
+        }
+
+        return packageInfo;
+    };
+
+
+//     // Hook MessageDigest.digest for SHA-256
+//     if (MessageDigest) {
+//     MessageDigest.digest.overload().implementation = function () {
+//         console.log("[*] Hooking MessageDigest.digest");
+//         var result = this.digest();
+//         if (this.getAlgorithm() === "SHA-256" && result.length === 32) {
+//             console.log("[*] Spoofing SHA-256 digest: e635c8fc...");
+//             return Java.array('byte', [
+//                 0xe6, 0x35, 0xc8, 0xfc, 0xbe, 0xce, 0x88, 0x0c,
+//                 0xe8, 0xf9, 0xda, 0xcc, 0x7d, 0x1b, 0x9f, 0x8b,
+//                 0x81, 0xdd, 0xb7, 0x56, 0xad, 0x7c, 0xe7, 0x0c,
+//                 0x42, 0x67, 0x65, 0xed, 0x14, 0xff, 0x7f, 0xd0
+//             ]);
+//         }
+//         return result;
+//     };
+
+    
+// }
+
+const publiccertbytes = [];
+for (let i = 0; i < cert.length; i += 2) {
+    publiccertbytes.push(`0x${cert.slice(i, i + 2)}`);
+}
+console.log(bytes.join(", "));
+    // Hook Signature.toByteArray
+    Signature.toByteArray.implementation = function () {
+        console.log("[*] Hooking Signature.toByteArray");
+        // Use certificate bytes if available, else dummy
+        return Java.array('byte', publiccertbytes);
+    };
+
+    console.log("[*] Signature spoofing hooks applied for com.takeaway.driver!");
+    console.log("[*] Signature spoofing hooks applied!");
+});
