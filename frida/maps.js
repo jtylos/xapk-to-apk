@@ -19,7 +19,7 @@
 
 // Define your NEW API key here.
 // Replace "YOUR_NEW_GOOGLE_MAPS_API_KEY_HERE" with the actual API key you want to use.
-const NEW_MAPS_API_KEY = "AIzaSyDhR17QoreKC9JydS9-8iTm0RF8Dt1-0gc";
+const NEW_MAPS_API_KEY = "";
 
 // Define common meta-data names for Google Maps API keys.
 // The primary one is "com.google.android.geo.API_KEY".
