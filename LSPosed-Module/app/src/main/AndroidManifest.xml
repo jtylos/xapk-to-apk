@@ -1,32 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.scooberflags">
+    xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- LSPosed/Xposed Module Metadata -->
     <application
-        android:label="Scoober Feature Flags"
-        android:icon="@mipmap/ic_launcher">
+        android:name=".FirebaseConfigApp"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FirebaseConfigManager"
+        tools:targetApi="31">
 
+        <!-- Xposed Module Declaration -->
         <meta-data
             android:name="xposedmodule"
             android:value="true" />
         <meta-data
             android:name="xposeddescription"
-            android:value="Modify Scoober/Takeaway Firebase feature flags" />
+            android:value="Manage Firebase Remote Config and Feature Toggles for Takeaway Driver App" />
         <meta-data
             android:name="xposedminversion"
-            android:value="82" />
+            android:value="93" />
         <meta-data
             android:name="xposedscope"
-            android:resource="@array/scope" />
+            android:resource="@array/xposed_scope" />
 
+        <!-- Main Activity -->
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.FirebaseConfigManager">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Content Provider for cross-process config access -->
+        <provider
+            android:name=".data.ConfigProvider"
+            android:authorities="com.firebaseconfigmanager.provider"
+            android:exported="true"
+            android:grantUriPermissions="true" />
+
     </application>
 
 </manifest>

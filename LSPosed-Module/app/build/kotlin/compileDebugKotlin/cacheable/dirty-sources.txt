@@ -1,0 +1,8 @@
+C:\Users\Mrdod\Documents\Github\xapk-to-apk\LSPosed-Module\app\src\main\java\com\firebaseconfigmanager\FirebaseConfigApp.kt
+C:\Users\Mrdod\Documents\Github\xapk-to-apk\LSPosed-Module\app\src\main\java\com\firebaseconfigmanager\data\ConfigStorage.kt
+C:\Users\Mrdod\Documents\Github\xapk-to-apk\LSPosed-Module\app\src\main\java\com\firebaseconfigmanager\ui\ConfigManagerApp.kt
+C:\Users\Mrdod\Documents\Github\xapk-to-apk\LSPosed-Module\app\src\main\java\com\firebaseconfigmanager\data\ConfigProvider.kt
+C:\Users\Mrdod\Documents\Github\xapk-to-apk\LSPosed-Module\app\src\main\java\com\firebaseconfigmanager\data\ConfigEntry.kt
+C:\Users\Mrdod\Documents\Github\xapk-to-apk\LSPosed-Module\app\src\main\java\com\firebaseconfigmanager\ui\theme\Theme.kt
+C:\Users\Mrdod\Documents\Github\xapk-to-apk\LSPosed-Module\app\src\main\java\com\firebaseconfigmanager\ui\MainActivity.kt
+C:\Users\Mrdod\Documents\Github\xapk-to-apk\LSPosed-Module\app\src\main\java\com\firebaseconfigmanager\xposed\FirebaseConfigHook.kt
